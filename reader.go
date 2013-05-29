@@ -82,6 +82,7 @@ func (csvr *Reader) readLine() (string, error) {
 			if pLen = 2 * pLen; pLen < necLen {
 				pLen = necLen
 			}
+			csvr.p = make([]byte, necLen)
 			var p = make([]byte, pLen)
 			copy(p, csvr.p[:csvr.pi])
 		}
